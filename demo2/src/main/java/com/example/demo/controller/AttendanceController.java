@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.entity.AttendanceTotal;
-import com.example.demo.mapper.AttendanceMapper;
 import com.example.demo.service.AttendanceService;
 /**
  * 出席状況集計 Controller
@@ -13,9 +12,6 @@ import com.example.demo.service.AttendanceService;
 @Controller
 //@RestController
 public class AttendanceController {
-
-  @Autowired
-  AttendanceMapper attendanceMapper;
   
   @Autowired
   AttendanceService attendanceService;
