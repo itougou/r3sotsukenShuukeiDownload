@@ -5,12 +5,12 @@
 <mapper namespace="com.example.demo.mapper.AttendanceMapper">
 
 	<!-- 科目名取得SQL -->
-    <select id="getAttendanceKamoku" resultType="String">
+	<select id="getAttendanceKamoku" resultType="String">
 		select distinct a.subject from attendance a ;
-    </select>
+	</select>
     
  	<!-- 学生別・科目別 出席数取得　SQL -->
-    <select id="getAttendanceTotal" parameterType="java.util.List" resultType="hashmap">
+	<select id="getAttendanceTotal" parameterType="java.util.List" resultType="hashmap">
     	select user_id as 氏名, 
 			<foreach item="kamokuItem" open="" close="" collection="list" separator="," >
 			      count( case when subject=#{kamokuItem} then 1 else null end ) as #{kamokuItem}

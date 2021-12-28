@@ -64,12 +64,12 @@ public class AttendanceDownloadController {
 			}
 		}
 		out.write( tsv.getBytes("shift_jis") );	//StringをシフトJISのバイトに変換
-        out.flush();	//バイトのデータを書き出す
+		out.flush();	//バイトのデータを書き出す
 		System.out.println("★tsv=\n"+tsv);
 		
 	} catch ( Exception e ) {
-	    e.printStackTrace();
-	    throw new RuntimeException(e);
+		e.printStackTrace();
+		throw new RuntimeException(e);
 	}
 
   }
