@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>出席情報</title>
+
+<link href="/css/list.css" rel="stylesheet"></link>
+</head>
+<body>
+
+<table border=1>
+<tr><!-- 見出し行 -->
+	<th:block th:each="lbl : ${label}"><!-- 列数分繰り返し -->
+		<th th:text="${lbl}"></th><!-- 見出し文字出力 -->
+	</th:block>
+</tr>
+<th:block th:each="dt : ${data}"><!-- データ行数分繰り返し -->
+	<tr><!-- データ行 -->
+		<th:block th:each="col : ${dt}"><!-- 列数分繰り返し -->
+			<td th:text="${col}" class="dat"></td><!-- 1列分のデータ出力 -->
+		</th:block>
+	</tr>
+</th:block>
+</table>
+</body>
+</html>
+
