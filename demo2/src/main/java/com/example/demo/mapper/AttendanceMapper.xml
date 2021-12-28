@@ -6,7 +6,7 @@
 
 	<!-- 科目名取得SQL -->
 	<select id="getAttendanceKamoku" resultType="String">
-		select distinct a.subject from attendance a ;
+		select distinct subject from attendance ;
 	</select>
     
  	<!-- 学生別・科目別 出席数取得　SQL -->
