@@ -2,11 +2,9 @@ package com.example.demo.controller;
 import java.util.List;
 
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +28,7 @@ public class AttendanceDownloadController {
    * Get へのマッピング
    */
   @GetMapping(value = "/AttendanceTotalDownload")
-  public void attendanceTotalDownloal(Model model,HttpServletRequest request,HttpServletResponse response) {
+  public void attendanceTotalDownloal( HttpServletResponse response ) {
 	  
 	response.setHeader("Content-Disposition", "attachment; filename=\"AttendanecTotalData.txt\"");
 	response.setContentType("text/plain; charset=shift_jis");
