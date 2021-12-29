@@ -21,7 +21,7 @@ public class AttendaneRepo {
 	private NamedParameterJdbcTemplate npJdbcTemplate;	//集計でつかう（動的にプレースホルダ―使用できる）
     
 	@Autowired
-	public void setJdbcTemplate(NamedParameterJdbcTemplate jdbcTemplate){
+	public void setJdbcTemplate( NamedParameterJdbcTemplate jdbcTemplate ){
 		this.npJdbcTemplate = jdbcTemplate;
 	}
 
@@ -53,10 +53,10 @@ public class AttendaneRepo {
 		// Mapにパラメータ（科目名）を設定する処理
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		for(int i=0; i<kamoku.size() ; i++) {
-			parameters.put( "k"+(i+1), kamoku.get(i) );
+			parameters.put( "k"+(i+1), kamoku.get(i) );	//名前付きプレースホルダ―へ科目をセット
 		}
 
-		List<Map<String, Object>>  ret = npJdbcTemplate.queryForList(sql, parameters);
+		List<Map<String, Object>>  ret = npJdbcTemplate.queryForList(sql, parameters);	//SQL文実行
 
 		return ret;
 	}
