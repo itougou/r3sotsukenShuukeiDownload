@@ -28,7 +28,7 @@ public class AttendanceDownloadController {
    * Get へのマッピング
    */
   @GetMapping(value = "/AttendanceTotalDownload")
-  public void attendanceTotalDownloal( HttpServletResponse response ) {
+  public void attendanceTotalDownload( HttpServletResponse response ) {
 	  
 	response.setHeader("Content-Disposition", "attachment; filename=\"AttendanecTotalData.txt\"");
 	response.setContentType("text/plain; charset=shift_jis");
