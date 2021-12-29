@@ -35,7 +35,7 @@ public class AttendanceService2 {
     	System.out.println("★tendanceRepo.getKamokuMapList() 科目List ="+kamokuMapList );
 
     	//全行のMapデータを取り出し、Listへ格納しなおす処理
-		List<String> kamokuList = new ArrayList<>();	//1行分のListを生成
+    	List<String> kamokuList = new ArrayList<>();	//1行分のListを生成
     	for ( int i = 0; i < kamokuMapList .size(); i++ ) {	//行数分繰り返し
     		Map<String,Object> hm = kamokuMapList.get(i);	//1行分のMapを取り出し
     		for ( String key :hm.keySet() ) {	//マップの件数分(1行の列数分)繰り返し
