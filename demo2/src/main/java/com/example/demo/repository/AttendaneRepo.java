@@ -9,23 +9,25 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-
+/*
+ *  jdbcTemplate および NamedParameterJdbcTemplate を使ったDBアクセス
+ */
 @Repository
 public class AttendaneRepo {
 
-@Autowired
-JdbcTemplate jdbcTemplate;	//科目名取得で使う（標準のjdbcTemplate）
+	@Autowired
+	JdbcTemplate jdbcTemplate;	//科目名取得で使う（標準のjdbcTemplate）
 
-    private NamedParameterJdbcTemplate NpjdbcTemplate;	//集計でつかう（動的にプレースホルダ―使用できる）
+	private NamedParameterJdbcTemplate NpjdbcTemplate;	//集計でつかう（動的にプレースホルダ―使用できる）
     
-    @Autowired
-    public void setJdbcTemplate(NamedParameterJdbcTemplate jdbcTemplate){
-        this.NpjdbcTemplate = jdbcTemplate;
-    }
+	@Autowired
+	public void setJdbcTemplate(NamedParameterJdbcTemplate jdbcTemplate){
+		this.NpjdbcTemplate = jdbcTemplate;
+	}
 
-    /*
-     * 科目名をMapのListで取得するメソッド　{subject、値}
-     */
+	/*
+	 * 科目名をMapのListで取得するメソッド　{subject、値}
+	 */
 	public List<Map<String,Object>> getKamokuMapList( ) {
 
 		String sql = "select distinct subject from attendance ";
